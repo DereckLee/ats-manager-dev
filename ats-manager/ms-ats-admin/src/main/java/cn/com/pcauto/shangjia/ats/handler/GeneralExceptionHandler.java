@@ -20,24 +20,25 @@ import java.util.Date;
 public class GeneralExceptionHandler {
 
 
-    @ExceptionHandler(value= AtsException.class)
+    @ExceptionHandler(value= Exception.class)
     public ResponseEntity<ExceptionMsg> exceptionHandler(HttpServletRequest request, Exception e){
         AtsException myException = null;
-        if(e instanceof AtsException){
-            myException = (AtsException) e;
-        }
-
         ExceptionMsg msg = new ExceptionMsg();
 
+        if(e instanceof AtsException){
+            myException = (AtsException) e;
+            msg.setMsg(myException.getMsg());
+
+        }else {
+            msg.setMsg(e.getMessage());
+        }
         msg.setCode(1)
-                .setMsg(myException.getMsg())
                 .setException(e.getStackTrace().toString())
                 .setMsName("ms-ats-admin")//Temp
                 .setMsUrl(request.getRequestURL().toString())
                 .setReferer(request.getHeader("referer"))
                 .setTime(new Date())//temp
                 .setUser("user_name");
-
         return ResponseEntity.ok(msg);
     }
 }
