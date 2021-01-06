@@ -1,5 +1,6 @@
 package cn.com.pcauto.shangjia.ats.service.impl;
 
+import cn.com.pcauto.shangjia.ats.entity.UrlRecord;
 import cn.com.pcauto.shangjia.ats.entity.UrlRecordTimer;
 import cn.com.pcauto.shangjia.ats.exception.AtsException;
 import cn.com.pcauto.shangjia.ats.mapper.UrlRecordTimerMapper;
@@ -8,6 +9,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -18,7 +20,8 @@ import javax.annotation.Resource;
  * @since 2021-01-05
  */
 @Service
-public class UrlRecordTimerServiceImpl extends ServiceImpl<UrlRecordTimerMapper, UrlRecordTimer> implements UrlRecordTimerService {
+public class UrlRecordTimerServiceImpl extends ServiceImpl<UrlRecordTimerMapper, UrlRecordTimer>
+        implements UrlRecordTimerService {
 
     @Resource
     private UrlRecordTimerMapper urlRecordTimerMapper;
@@ -53,5 +56,11 @@ public class UrlRecordTimerServiceImpl extends ServiceImpl<UrlRecordTimerMapper,
     }
 
 
+
+    @Override
+    public List<UrlRecord> findByPage(Integer pageNo, Integer pageSize) {
+
+        return null;
+    }
 }
 

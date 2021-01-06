@@ -1,7 +1,10 @@
 package cn.com.pcauto.shangjia.ats.service;
 
+import cn.com.pcauto.shangjia.ats.entity.UrlRecord;
 import cn.com.pcauto.shangjia.ats.entity.UrlRecordTimer;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -27,4 +30,13 @@ public interface UrlRecordTimerService extends IService<UrlRecordTimer> {
      * @return
      */
     UrlRecordTimer selectById(Long id);
+
+    /**
+     *
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    List<UrlRecord> findByPage(Integer pageNo, Integer pageSize);
+
 }

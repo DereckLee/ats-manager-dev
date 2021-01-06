@@ -28,7 +28,8 @@ import java.util.Map;
  * @since 2021-01-05
  */
 @Service
-public class UrlRecordServiceImpl extends ServiceImpl<UrlRecordMapper, UrlRecord> implements UrlRecordService {
+public class UrlRecordServiceImpl
+        extends ServiceImpl<UrlRecordMapper, UrlRecord> implements UrlRecordService {
 
     @Autowired
     private IdWorker idWorker;
@@ -45,56 +46,9 @@ public class UrlRecordServiceImpl extends ServiceImpl<UrlRecordMapper, UrlRecord
     @Override
     public List<UrlRecord> findByPage(Integer pageNo, Integer pageSize) {
 
-        QueryWrapper<UrlRecord> query = new QueryWrapper<>();
-
-        //设置分页参数
-        Page<UrlRecord> page = new Page<>(pageNo, pageSize);
 
 
-        //按照表顺序，记录数的偏移量
-        int offset = (pageNo-1)*pageSize;//起始点的偏移量
-        List<UrlRecord> coll = new ArrayList<>();//存储查询的表
-        Map<Integer,Integer> countTable = new HashMap<>();//表号->记录数
-        int counter = 0;
-        int frontOffset = 0;
-        int behindOffset = 0;
-        int startIndex = 0;//开始表
-        int endIndex = 0;//最后的表
-
-        for (int i = 0; i < 100; i++) {
-
-            //String tabName = AtsTabs.URL_RECORD + i;
-            //表的总记录数
-            frontOffset += countRecordByTabName(AtsTabs.URL_RECORD + i);//前偏移
-            behindOffset += countRecordByTabName(AtsTabs.URL_RECORD + (i+1));//后偏移
-
-
-            countTable.put(i,countRecordByTabName(AtsTabs.URL_RECORD + i));//记录数
-
-            //定位表查询的范围[startIndex,endIndex]
-            if(offset > frontOffset && offset <= behindOffset){
-                startIndex = i;
-            }
-            if((offset+pageSize) > frontOffset && (offset+pageSize) <= behindOffset){
-                endIndex = i;
-            }
-        }
-        //扫描查询{pageSize}条记录
-        for (int i = startIndex; i <= endIndex; i++) {
-            //size==0,跳过
-            if(countTable.get(1) == 0)
-                continue;
-
-            //表记录数中不够，查询全部
-
-
-            //
-
-        }
-
-
-
-        return coll;
+        return null;
     }
 
     /**
