@@ -1,0 +1,23 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    username: qd_dealer
+    password: qd_dealer
+    #url: jdbc:mysql://127.0.0.1:3307/ats-manager?timezone=GTM%2B8
+    #url: jdbc:mysql://192.168.53.100:3307/ats-manager?timezone=GTM%2B8
+    url: jdbc:mysql://192.168.75.103:3307/ats-manager?timezone=GTM%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+#MyBatis Plus config
+mybatis-plus:
+  mapper-locations: classpath*:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+

@@ -1,0 +1,32 @@
+--
+INSERT INTO #{tabName} (
+`id`,`define_id`,`url`,`md5_url`,`md5_content`,`push_time`,
+`purge_time`,`status`,`status_msg`,`page_total`,`create_time`,
+`update_time`,`create_by`,`update_by`,
+`val1` ,`val2` ,`val3`,`val4`,`val5`,`val6`,`val7`,`val8`,`val9`,`val10`)
+VALUES(
+#{entity.id},
+#{entity.defineId},
+#{entity.url},
+#{entity.md5Url},
+#{entity.md5Content},
+#{entity.pushTime},
+#{entity.purgeTime},
+#{entity.status},
+#{entity.statusMsg},
+#{entity.pageTotal},
+#{entity.createTime},
+#{entity.updateTime},
+#{entity.createBy},
+#{entity.updateBy},
+#{entity.val1},
+#{entity.val2},
+#{entity.val3},
+#{entity.val4},
+#{entity.val5},
+#{entity.val6},
+#{entity.val7},
+#{entity.val8},
+#{entity.val9},
+#{entity.val10}
+)

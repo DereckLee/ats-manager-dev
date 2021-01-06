@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.pcauto.shangjia.ats.mapper.UrlRecordMapper">
+
+    <insert id="saveDynamically">
+        INSERT INTO ${tabName}(
+        `id`,`define_id`,`url`,`md5_url`,`md5_content`,`push_time`,
+        `purge_time`,`status`,`status_msg`,`page_total`,`create_time`,
+        `update_time`,`create_by`,`update_by`,
+        `val1` ,`val2` ,`val3`,`val4`,`val5`,`val6`,`val7`,`val8`,`val9`,`val10`)
+        VALUES(
+        #{entity.id},
+        #{entity.defineId},
+        #{entity.url},
+        #{entity.md5Url},
+        #{entity.md5Content},
+        #{entity.pushTime},
+        #{entity.purgeTime},
+        #{entity.status},
+        #{entity.statusMsg},
+        #{entity.pageTotal},
+        #{entity.createTime},
+        #{entity.updateTime},
+        #{entity.createBy},
+        #{entity.updateBy},
+        #{entity.val1},
+        #{entity.val2},
+        #{entity.val3},
+        #{entity.val4},
+        #{entity.val5},
+        #{entity.val6},
+        #{entity.val7},
+        #{entity.val8},
+        #{entity.val9},
+        #{entity.val10})
+    </insert>
+
+
+    <update id="updateByIdAndTabName">
+        UPDATE #{tabName} SET
+        `define_id`=#{entiy.defineId},
+        `url`#{entiy.url},
+        `md5_url`=#{entiy.md5Url},
+        `md5_content`=#{entiy.md5Content},
+        `push_time`#{entiy.pushTime},
+        `purge_time`#{entiy.purgeTime},
+        `status`#{entiy.status},
+        `status_msg`#{entiy.statusMsg},
+        `page_total`#{entiy.pageTotal},
+        `create_by`=#{entiy.createBy},
+        `update_by`=#{entiy.updateBy},
+        `val1`=#{entiy.val1},
+        `val2`=#{entiy.val2},
+        `val3`=#{entiy.val3},
+        `val4`=#{entiy.val4},
+        `val5`=#{entiy.val5},
+        `val6`=#{entiy.val6},
+        `val7`=#{entiy.val7},
+        `val8`=#{entiy.val8},
+        `val9`=#{entiy.val9},
+        `val10`=#{entiy.val10}
+        WHERE id=#{entity.id}
+    </update>
+
+
+
+
+
+</mapper>

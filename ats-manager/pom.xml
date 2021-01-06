@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.pcauto.shangjia</groupId>
+    <artifactId>ats-manager</artifactId>
+    <packaging>pom</packaging>
+    <version>20210105.1</version>
+    <modules>
+        <module>ats-common</module>
+        <module>ms-ats-admin</module>
+    </modules>
+
+    <parent>
+        <groupId>cn.com.pcauto.shangjia</groupId>
+        <artifactId>ms-dealer-parent-v2.3.4</artifactId>
+        <version>20201223.1</version>
+    </parent>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.3</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
